@@ -1,0 +1,9 @@
+# Windows custody filesystem
+
+This workspace crate supplies handle-relative Windows storage for public enrollment receipts and encrypted TPM blobs. All four Rust source files are byte-for-byte copies of the accepted filesystem layer (`notes/windows-custody-fs/README.md`). The [source-origin record](source-origin.json) identifies each original and relocated hash.
+
+The Windows helper uses this crate for the implemented PQ lifecycle: creation, recovery, unwrap, inspection and deletion. The production integration contract (`docs/post-quantum-format.md`) defines that boundary; the local acceptance (`notes/post-quantum-local-complete.md`) and installed-release record (`notes/installed-post-quantum.md`) separate completed validation from the remaining lifecycle checks. The root lock is authoritative. The manifest retains the accepted `windows-sys 0.61.2` features. The workspace evidence (`notes/custody-fs-workspace.md`) preserves the original relocation validation and independent integration review.
+
+The interface retains ancestors and opens known files relative to verified directory handles. It checks ownership, protected current-user/SYSTEM DACLs, object types, hard links and reparses. New creation is exclusive. Existing opens never create or repair storage. The caller must validate the complete expected identity and pending record before commit, and verify matching PCP deletion before removing known files. Empty-directory removal never recurses. Structured cleanup failures must stop the caller's campaign.
+
+This crate performs no TPM commands, key enrollment, seed restoration or private cryptography. A successful flush/rename does not prove power-loss durability or reboot/login behavior. Authorized live users and administrators remain outside its confidentiality boundary. The original tests use public stand-in bytes in exclusive randomized namespaces and independently verify cleanup.

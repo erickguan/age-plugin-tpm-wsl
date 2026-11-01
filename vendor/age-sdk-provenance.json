@@ -1,0 +1,93 @@
+{
+  "schema": 1,
+  "scope": "Exact accepted SDK source copies; root integration and deployment are separate gates",
+  "validation_report": "notes/protocol-memory-evaluation/validation-scoped.json",
+  "validation_report_sha256": "ff8595fb5c6034192d46b1d584b8bc6decdfc2a4067b42a1eff98ec53350ed80",
+  "root_before_adoption_lock": "notes/protocol-memory-evaluation/root-before-adoption.lock",
+  "root_before_adoption_lock_sha256": "8f74d1fae49bcf62c626f735cebb6eb98c4c15aae5dfd90800c52a9e3190ac90",
+  "packages": {
+    "age-core": {
+      "version": "0.12.0",
+      "archive_sha256": "01d4375964d1501e5f1b32aef2ead573913893ff238448d4e9fdf1522d828656",
+      "original_sha256": {
+        ".cargo_vcs_info.json": "53a25fda270b778e3cb9080abfa6060bc9110336484f4047875c8574b187a4c0",
+        "CHANGELOG.md": "d6321789c8eb3467d8de73fa00886d1bd661934fc59afb0cbd758cdcb1e34e98",
+        "Cargo.lock": "7980eb52c1e88daa10f9dd5346497fcedb66d1a8e366416fb7748f3f289cff87",
+        "Cargo.toml": "f15eee630f0c44587560912d5d6a65276f647e5a154c91af0428dbbf6d649790",
+        "Cargo.toml.orig": "887d6f19329c961c499210888aee2b960a4830a56f9f9a321250693dc46de0e6",
+        "README.md": "cec49e3cd8627c2ef226f79dbbdd4a1d424bf676657cd6e6d680014e29fb3de9",
+        "src/format.rs": "0e167cfa1af93b933dcf6dc8bd0aca5355742e22ae683164eb9e6c3ca704cdff",
+        "src/io.rs": "9b1f2abc58869ba97570a9872dac1290a516f6973a4ed35d5fb9cae81f1e1a16",
+        "src/lib.rs": "ba12bc5f109d8ac6c02ebb600b7be1eceae0db0079dfa0ef2e4a42e36f1cfd0b",
+        "src/plugin.rs": "82e37a280a1214d9dcfa53fe1a4ab2e35668d47977f27172735fd51d26d1d73b",
+        "src/primitives.rs": "834b6b5a46be36105f26f56f0d00d9da8c663ce72d7c0e4fe2272d9e5f36e7d4"
+      },
+      "changed_files": [
+        "src/format.rs",
+        "src/plugin.rs",
+        "src/plugin/buffer.rs",
+        "src/plugin/buffer_tests.rs",
+        "src/plugin_memory_tests.rs"
+      ],
+      "final_sha256": {
+        ".cargo_vcs_info.json": "53a25fda270b778e3cb9080abfa6060bc9110336484f4047875c8574b187a4c0",
+        "CHANGELOG.md": "d6321789c8eb3467d8de73fa00886d1bd661934fc59afb0cbd758cdcb1e34e98",
+        "Cargo.lock": "7980eb52c1e88daa10f9dd5346497fcedb66d1a8e366416fb7748f3f289cff87",
+        "Cargo.toml": "f15eee630f0c44587560912d5d6a65276f647e5a154c91af0428dbbf6d649790",
+        "Cargo.toml.orig": "887d6f19329c961c499210888aee2b960a4830a56f9f9a321250693dc46de0e6",
+        "README.md": "cec49e3cd8627c2ef226f79dbbdd4a1d424bf676657cd6e6d680014e29fb3de9",
+        "src/format.rs": "465c2d949a2a867ec29608082042c8f7134ead233ad3f93e6cf382cc820d5162",
+        "src/io.rs": "9b1f2abc58869ba97570a9872dac1290a516f6973a4ed35d5fb9cae81f1e1a16",
+        "src/lib.rs": "ba12bc5f109d8ac6c02ebb600b7be1eceae0db0079dfa0ef2e4a42e36f1cfd0b",
+        "src/plugin/buffer.rs": "f133b3ddd28498bcb2a9d29fbe3e46086482296887008732868f69fb1e768a4b",
+        "src/plugin/buffer_tests.rs": "cfd0d31565a29f1e620f4839e187e2000fcdc4dc4d7ccbc69a2d4bdf638421c5",
+        "src/plugin.rs": "c43dd97588dee281df35745764bde062872a1b1e9a8765d38ad9e1ae30239999",
+        "src/plugin_memory_tests.rs": "614dd75d0af8be18252b17a0e824b0fcf57bb53f1f430b7df3dc681b47ab7cee",
+        "src/primitives.rs": "834b6b5a46be36105f26f56f0d00d9da8c663ce72d7c0e4fe2272d9e5f36e7d4"
+      }
+    },
+    "age-plugin": {
+      "version": "0.7.0",
+      "archive_sha256": "2e639a0bf4973247c88bc8ff08517f0ee438d19ba3d40f6f340353c6ba9fc2aa",
+      "original_sha256": {
+        ".cargo_vcs_info.json": "568d157154d2aa51b658e659dff4c2bb0c5a284b64d793d88d5ff9a4be3a8886",
+        "CHANGELOG.md": "13548d2d855432ff04e1233accc012a98dcbda0908b62d1718c92a16132a6c79",
+        "Cargo.lock": "38a8b4dac0bc8229201e4e3d9cb0c9d7106f92b4be36ed3488cfdb38d701e0dd",
+        "Cargo.toml": "ad3f8127979d6d65dd85850190e5954004c4d4f4c7f84b66e0cecfb9037ddf84",
+        "Cargo.toml.orig": "3bce93b36f895d38b176e99bb79db1136afb1e875cae05b7b0d79d63408a19d9",
+        "README.md": "150683bf75909aa0c5b7a6c53bc50f495b557e040269f49f09886c6d0c88ccae",
+        "README.tpl": "86f471becf4c0a4b786757b1bcebab741cd2d64cf1a915d1e5384ef9a0b6f73b",
+        "examples/age-plugin-unencrypted.rs": "40bdcad9c60898915e6fad0ff7894d20bb392f6e5759e0116af7e58552d667ad",
+        "src/identity.rs": "c37aea1b923ea1127177b602e489800670a59a80e22c9db82fdaec7b89e35f13",
+        "src/lib.rs": "94ce863b3ce37e33f4913d408eeb4017b2d6e1bcb8f8fa726e0a98b60810ba77",
+        "src/recipient.rs": "01dabff443a1a2048298df908fa20b3cdc2d1ebc47fa9425081aaf568300a8dc"
+      },
+      "changed_files": [
+        "src/recipient.rs"
+      ],
+      "final_sha256": {
+        ".cargo_vcs_info.json": "568d157154d2aa51b658e659dff4c2bb0c5a284b64d793d88d5ff9a4be3a8886",
+        "CHANGELOG.md": "13548d2d855432ff04e1233accc012a98dcbda0908b62d1718c92a16132a6c79",
+        "Cargo.lock": "38a8b4dac0bc8229201e4e3d9cb0c9d7106f92b4be36ed3488cfdb38d701e0dd",
+        "Cargo.toml": "ad3f8127979d6d65dd85850190e5954004c4d4f4c7f84b66e0cecfb9037ddf84",
+        "Cargo.toml.orig": "3bce93b36f895d38b176e99bb79db1136afb1e875cae05b7b0d79d63408a19d9",
+        "README.md": "150683bf75909aa0c5b7a6c53bc50f495b557e040269f49f09886c6d0c88ccae",
+        "README.tpl": "86f471becf4c0a4b786757b1bcebab741cd2d64cf1a915d1e5384ef9a0b6f73b",
+        "examples/age-plugin-unencrypted.rs": "40bdcad9c60898915e6fad0ff7894d20bb392f6e5759e0116af7e58552d667ad",
+        "src/identity.rs": "c37aea1b923ea1127177b602e489800670a59a80e22c9db82fdaec7b89e35f13",
+        "src/lib.rs": "94ce863b3ce37e33f4913d408eeb4017b2d6e1bcb8f8fa726e0a98b60810ba77",
+        "src/recipient.rs": "9d36ece10743940ae98c26277dd92ee495fc93bd68060a1f75c49c9f99f39ae0"
+      }
+    }
+  },
+  "patch_sha256": {
+    "age-core-memory.patch": "6d1ecab1303280700bece4ee91729f2cde5cef111dccc8a3862d07825ec981bd",
+    "age-plugin-memory.patch": "0b4b2679296aade7b77e6a925dbdb69fd2789cd4161a446cb9a734200ff6e753"
+  },
+  "limits": [
+    "Preserves original archive files, dependency manifests and license declarations",
+    "No Cargo selector/lock update, registry mutation, key operation or installation",
+    "Ordinary publication failures roll back only new destinations; abrupt-kill durability is not claimed",
+    "Plain source copies; comprehensive erasure and physical media wiping are not claimed"
+  ]
+}

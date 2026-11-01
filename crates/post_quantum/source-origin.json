@@ -1,0 +1,37 @@
+{
+  "accepted_commit": "a1eee1d0a1ef",
+  "source_files": {
+    "src/crypto.rs": {
+      "original": "notes/aws-lc-hybrid-evaluation/src/lib.rs",
+      "original_sha256": "175f3cc109441ca1dcf93fad49014093fcff331586cb950f6cd13606723f43fe",
+      "staged_sha256": "efc704cdf6b40f1ab4532af5185979e71921a7f81f421ce898075e62d91adcc6"
+    },
+    "src/crypto/tests.rs": {
+      "original": "notes/aws-lc-hybrid-evaluation/src/tests.rs",
+      "original_sha256": "b89576be0c7405ec514e87d1dff1c65d919762328bb3fcc082f7cc49260fc832",
+      "staged_sha256": "aea4ab18d7875e1a6e663950e4b702ff1505152b9ecb63f74db7b3563c4a879f"
+    },
+    "src/identity.rs": {
+      "original": "notes/pq-custody-binding/src/lib.rs",
+      "original_sha256": "e35f260798e0e01b8c396e1c3f94fabeba165d9e339a89daa4ccb4e7974c4e00",
+      "staged_sha256": "63da5e1055ab55ab7617b0b66aa20a810825d91111d37cda7e032bb39a818ccc"
+    },
+    "src/identity/tests.rs": {
+      "original": "notes/pq-custody-binding/src/tests.rs",
+      "original_sha256": "b1c5ccda08b8c7034cc9b10f6dd807593cc24609d143dc03652bb87dd342506e",
+      "staged_sha256": "0a087c0d69ca2339e15f6797259b637731e28a2ecef51db732c24ac060a375c1"
+    },
+    "src/identity/record.rs": {
+      "original": "notes/pq-custody-binding/src/record.rs",
+      "original_sha256": "6fec94d4fbefcf9e766091ce1172aadfa7212149cc8c9300a2d0516d3a1e01a3",
+      "staged_sha256": "cbfd7e47f20c03744f7c4517647dd4beb1445b8efeeafe7aadde5e7dd54798de"
+    }
+  },
+  "changes": [
+    "Module/import/test-fixture paths and seed feature name",
+    "No construction, parser or record encoding changes"
+  ],
+  "limits": [
+    "Staged outside production workspace pending exact source/graph checks and independent review"
+  ]
+}

@@ -1,0 +1,30 @@
+[package]
+name = "age-tpm-wsl-helper"
+version = "0.1.0"
+edition = "2024"
+license = "Apache-2.0"
+
+[features]
+# Enables only the separately built, uninstalled validation example.
+client-validation = []
+
+[dependencies]
+age-plugin-tpm-wsl = { path = ".." }
+zeroize = "1.8"
+serde_json = "1"
+
+[target.'cfg(windows)'.dependencies]
+# Keep all seed restoration and private opening in the Windows helper.
+windows-custody-fs = { path = "../crates/custody-fs" }
+age-tpm-wsl-post-quantum = { path = "../crates/post_quantum", features = ["seed-restoration"] }
+aws-lc-rs = { version = "=1.18.2", default-features = false, features = ["alloc", "non-fips", "prebuilt-nasm", "experimental-kem-seed"] }
+windows-sys = { version = "0.61", features = ["Win32_Security_Cryptography", "Win32_Foundation", "Win32_System_TpmBaseServices"] }
+
+[dev-dependencies]
+# Public identity parsing for platform-independent fixture authority tests.
+age-tpm-wsl-post-quantum = { path = "../crates/post_quantum" }
+
+[[example]]
+name = "post_quantum_fixture"
+path = "examples/post_quantum_fixture.rs"
+required-features = ["client-validation"]

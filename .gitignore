@@ -1,0 +1,20 @@
+# Local agent context, sessions and runtime state
+/.agents/
+/AGENTS.md
+/.pi/
+
+# Rust build output, including isolated experiments
+**/target/
+
+# Python validation script cache
+__pycache__/
+
+# Generated Windows executables
+*.exe
+
+# Fuzzer generated mutations and crash artifacts
+/fuzz/corpus/
+/fuzz/artifacts/
+/fuzz/coverage/
+
+# Keep generated identities and ciphertext caches outside this repository.

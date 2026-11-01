@@ -1,0 +1,50 @@
+[package]
+name = "age-plugin-tpm-wsl-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2024"
+license = "Apache-2.0"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+age-plugin-tpm-wsl = { path = ".." }
+age-tpm-wsl-post-quantum = { path = "../crates/post_quantum" }
+age-core = "0.12"
+base64 = "0.22"
+zeroize = "1"
+
+[workspace]
+
+[patch.crates-io]
+aws-lc-rs = { path = "../vendor/aws-lc-rs" }
+
+[[bin]]
+name = "formats"
+path = "fuzz_targets/formats.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "helper_frame"
+path = "fuzz_targets/helper_frame.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "custody_record"
+path = "fuzz_targets/custody_record.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "stanza"
+path = "fuzz_targets/stanza.rs"
+test = false
+doc = false
+bench = false

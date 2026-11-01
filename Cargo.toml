@@ -1,0 +1,58 @@
+[workspace]
+members = ["helper", "crates/post_quantum", "crates/custody-fs"]
+resolver = "3"
+
+[package]
+name = "age-plugin-tpm-wsl"
+version = "0.1.0"
+edition = "2024"
+license = "Apache-2.0"
+description = "An age plugin using Windows TPM keys from WSL"
+
+[dependencies]
+# Offline public wrapping; Windows alone opts into seed restoration.
+age-tpm-wsl-post-quantum = { path = "crates/post_quantum" }
+age-core = "0.12"
+age-plugin = "0.7"
+base64 = "0.22"
+bech32 = "0.11"
+rand = "0.8"
+# RSA public wrapping; private production operations stay in Windows PCP.
+aws-lc-rs = { version = "=1.18.2", default-features = false, features = ["alloc", "non-fips", "prebuilt-nasm"] }
+sha2 = "0.10"
+zeroize = "1.8"
+wait-timeout = "0.2"
+serde_json = "1"
+# Public hardware receiver primitives are doc(hidden); pin the reviewed release.
+hpke = { version = "=0.14.1", default-features = false, features = ["alloc", "nistp", "chacha", "getrandom"] }
+# Unify this feature to wipe the AEAD's stored key on drop.
+chacha20poly1305 = { version = "=0.11.0", default-features = false, features = ["zeroize"] }
+poly1305 = { version = "=0.9.1", default-features = false, features = ["zeroize"] }
+hpke-sha2 = { package = "sha2", version = "=0.11.1", default-features = false, features = ["zeroize"] }
+
+[patch.crates-io]
+hkdf-v012 = { package = "hkdf", path = "vendor/crypto-memory/hkdf-0.12.4" }
+hkdf-v013 = { package = "hkdf", path = "vendor/crypto-memory/hkdf-0.13.0" }
+hmac-v012 = { package = "hmac", path = "vendor/crypto-memory/hmac-0.12.1" }
+hmac-v013 = { package = "hmac", path = "vendor/crypto-memory/hmac-0.13.0" }
+# Exact reviewed seed interface; source/patch hashes are retained under vendor/.
+aws-lc-rs = { path = "vendor/aws-lc-rs" }
+# Accepted protocol-buffer wiping and required-label refusal; exact source provenance.
+age-core = { path = "vendor/age-core" }
+age-plugin = { path = "vendor/age-plugin" }
+
+[dev-dependencies]
+# Public component extraction for the disposable software fixture only.
+aws-lc-rs = { version = "=1.18.2", default-features = false, features = ["ring-io"] }
+# Reuse HPKE's current P-256 stack for test-only scalar fixtures; no ECDSA/PEM.
+p256 = { version = "=0.14.0", default-features = false, features = ["ecdh", "getrandom"] }
+hex = "0.4"
+tempfile = "3"
+
+[[bin]]
+name = "age-tpm-wsl-check"
+path = "src/check.rs"
+
+[[bin]]
+name = "age-plugin-tpm-wsl"
+path = "src/main.rs"

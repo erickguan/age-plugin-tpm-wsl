@@ -1,0 +1,33 @@
+{
+  "baseline_commit": "dca85b5ed96186f7ad81f0dc772c0169518b7bc0",
+  "source_files": {
+    "src/windows.rs": {
+      "original": "notes/windows-custody-fs/src/windows.rs",
+      "original_sha256": "1bd375e82cf4b2a92777f9ac990a198f02d5579e7eaee95bfdd1e15e948d6661",
+      "relocated_sha256": "1bd375e82cf4b2a92777f9ac990a198f02d5579e7eaee95bfdd1e15e948d6661"
+    },
+    "src/lib.rs": {
+      "original": "notes/windows-custody-fs/src/lib.rs",
+      "original_sha256": "100ad113e8513573b8503ac804645a08bcedd766c93ebf834be297a61ec05235",
+      "relocated_sha256": "100ad113e8513573b8503ac804645a08bcedd766c93ebf834be297a61ec05235"
+    },
+    "src/windows/cleanup_tests.rs": {
+      "original": "notes/windows-custody-fs/src/windows/cleanup_tests.rs",
+      "original_sha256": "a6f0ed98c7fa685fdeaf74d52bf023efee419925665517a20b1911ee24737056",
+      "relocated_sha256": "a6f0ed98c7fa685fdeaf74d52bf023efee419925665517a20b1911ee24737056"
+    },
+    "src/windows/tests.rs": {
+      "original": "notes/windows-custody-fs/src/windows/tests.rs",
+      "original_sha256": "be5afd93354dd967b693e4684b37584d6f40509b6db1884faa631257fd0c9e3b",
+      "relocated_sha256": "be5afd93354dd967b693e4684b37584d6f40509b6db1884faa631257fd0c9e3b"
+    }
+  },
+  "changes": [
+    "All four Rust source files are byte-for-byte copies of the accepted handle-relative filesystem layer",
+    "Manifest joins the production workspace and records project Apache-2.0 license; windows-sys dependencies/features unchanged"
+  ],
+  "limits": [
+    "Filesystem primitive only; no TPM commands, PCP identity, seed custody or production lifecycle dispatch",
+    "Actual relocated Windows tests, cleanup-error controls, feature graph scans and independent review remain required"
+  ]
+}
